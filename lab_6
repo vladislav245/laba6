@@ -941,3 +941,39 @@ int main()
 
     return 0;
 }
+// умножение
+
+cout << endl;
+
+int** arr3 = new int* [count1 * count2];
+
+for (int x1 = 0; x1 != count1; x1++) {
+
+    for (int y1 = 0; y1 != count2; y1++) {
+        arr3[x1 * count2 + y1] = new int[count1 * count2];
+
+        for (int x2 = 0; x2 != count1; x2++) {
+
+            for (int y2 = 0; y2 != count2; y2++) {
+                if (x1 == x2) {
+                    arr3[x1 * count2 + y1][x2 * count2 + y2] = arr2[y1][y2];
+                }
+                else if (y1 == y2) {
+                    arr3[x1 * count2 + y1][x2 * count2 + y2] = arr1[x1][x2];
+                }
+                else arr3[x1 * count2 + y1][x2 * count2 + y2] = 0;
+            }
+        }
+    }
+}
+
+for (int i = 0; i != count1 * count2; i++) {
+    for (int j = 0; j != count1 * count2; j++) {
+        cout << arr3[i][j] << ' ';
+    }
+    cout << endl;
+}
+
+
+return 0;
+}
